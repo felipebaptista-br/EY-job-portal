@@ -1,0 +1,68 @@
+[
+    {
+        "id_admin": "!Int",
+        "senha": "!String",
+        "nome": "!String"
+    },
+    {
+        "cpf": "!String",
+        "nome": "!String",
+        "email": "!String",
+        "senha": "!String",
+        "classe": "!String",
+        "LGBTQIA+": "!Boolean",
+        "genero": "!String",
+        "cor": "!String",
+        "id_curso": "!Int"
+    },
+    {
+        "cnpj": "!String",
+        "logo": "!String",
+        "nome": "!String",
+        "setor": "!String",
+        "descricao": "String"
+    },
+    {
+        "id_vaga": "!Int",
+        "categoria": {
+            "marketing_comunicacao": "!Boolean",
+            "design_desenvolvimento": "!Boolean",
+            "recursos_humanos": "!Boolean",
+            "financas": "!Boolean",
+            "governancas": "!Boolean",
+            "negocios_consultoria": "!Boolean",
+            "clientes_suporte": "!Boolean",
+            "gerente": "!Boolean"
+        },
+        "cnpj": "!String",
+        "descricao_empresa": "String",
+        "descricao_vaga": "!String",
+        "exclusividade": {
+            "mulheres": "!Boolean",
+            "LGBTQIA+": "!Boolean",
+            "baixa_renda": "!Boolean"
+        },
+        "etapa": {
+            "teste": {
+                "ativacao": "!Boolean",
+                "titulo": "!String",
+                "descricao": "!String"
+            },
+            "entrevista": {
+                "ativacao": "!Boolean",
+                "titulo": "!String",
+                "descricao": "!String"
+            },
+            "resultado": {
+                "ativacao": "!Boolean",
+                "titulo": "!String",
+                "descricao": "!String"
+            }
+        }
+    },
+    {
+        "id_curso": "!Int",
+        "id_admin": "!Int",
+        "nome": "!String"
+    }
+]

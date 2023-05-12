@@ -1,0 +1,12 @@
+.button {
+    border: none;
+    border-radius: 15px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.button:hover {
+    background-color: var(--secondary);
+    transition: 0.4s;
+}

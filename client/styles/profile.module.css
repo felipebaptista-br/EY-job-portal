@@ -1,0 +1,23 @@
+.panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 7rem;
+}
+
+.color {
+    color: var(--primary);
+}
+
+.icon {
+    cursor: pointer;
+    color: var(--primary);
+    margin-left: 1rem;
+}
+
+.gridContent {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 1rem;
+}

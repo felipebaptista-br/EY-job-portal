@@ -1,0 +1,40 @@
+.cardJob {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 250px;
+    cursor: pointer;
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 3px solid #d3d3d3;
+}
+
+.cardJob:hover {
+    transition: 0.5s;
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+}
+
+.companyJob {
+    display: flex;
+    align-items: center;
+}
+
+.companyJob p {
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.companyJob img {
+    width: 15%;
+}
+
+.contentJob {
+    margin-top: 1rem;
+}
+
+.contentJob p {
+    margin-top: 0.5rem;
+}
