@@ -1,68 +1,70 @@
 [
     {
-        "id_admin": "!Int",
-        "senha": "!String",
-        "nome": "!String"
-    },
-    {
-        "cpf": "!String",
-        "nome": "!String",
-        "email": "!String",
-        "senha": "!String",
-        "classe": "!String",
-        "LGBTQIA+": "!Boolean",
-        "genero": "!String",
-        "cor": "!String",
-        "id_curso": "!Int"
-    },
-    {
-        "cnpj": "!String",
-        "logo": "!String",
-        "nome": "!String",
-        "setor": "!String",
-        "descricao": "String"
-    },
-    {
-        "id_vaga": "!Int",
-        "categoria": {
-            "marketing_comunicacao": "!Boolean",
-            "design_desenvolvimento": "!Boolean",
-            "recursos_humanos": "!Boolean",
-            "financas": "!Boolean",
-            "governancas": "!Boolean",
-            "negocios_consultoria": "!Boolean",
-            "clientes_suporte": "!Boolean",
-            "gerente": "!Boolean"
-        },
-        "cnpj": "!String",
-        "descricao_empresa": "String",
-        "descricao_vaga": "!String",
-        "exclusividade": {
-            "mulheres": "!Boolean",
-            "LGBTQIA+": "!Boolean",
-            "baixa_renda": "!Boolean"
-        },
-        "etapa": {
-            "teste": {
-                "ativacao": "!Boolean",
-                "titulo": "!String",
-                "descricao": "!String"
-            },
-            "entrevista": {
-                "ativacao": "!Boolean",
-                "titulo": "!String",
-                "descricao": "!String"
-            },
-            "resultado": {
-                "ativacao": "!Boolean",
-                "titulo": "!String",
-                "descricao": "!String"
-            }
+        "tb_candidatos": {
+            "cpf": "!String",
+            "nome": "!String",
+            "email": "!String",
+            "senha": "!String",
+            "genero": "!String",
+            "raca": "!String",
+            "id_curso": "!Int"
         }
     },
     {
-        "id_curso": "!Int",
-        "id_admin": "!Int",
-        "nome": "!String"
+        "tb_diversidade_inclusao": {
+            "id_recorte": "!Int",
+            "des_recorte": "!String"
+        }
+    },
+    {
+        "tb_cursos": {
+            "id_curso": "!Int",
+            "id_admin": "!Int",
+            "nome": "!String"
+        }
+    },
+    {
+        "tb_administradores": {
+            "id_admin": "!Int",
+            "nome": "!String",
+            "email": "!String",
+            "senha": "!String"
+        }
+    },
+    {
+        "tb_empresas": {
+            "cnpj": "!String",
+            "nome": "!String",
+            "setor": "!String",
+            "descricao": "String"
+        }
+    },
+    {
+        "tb_departamento": {
+            "id_departamento": "!Int",
+            "desc_departamento": "!String"
+        }
+    },
+    {
+        "tb_vagas": {
+            "id_vaga": "!Int",
+            "id_departamento": "!Int",
+            "id_recorte": "!Int",
+            "id_cnpj_FK": "!Int",
+            "descricao_empresa": "String",
+            "descricao_vaga": "!String"
+        }
+    },
+    {
+        "tb_cadidaturas": {
+            "id_vaga": "!Int",
+            "id_candidato": "!Int",
+            "ativacao_entrevista": "!Boolean",
+            "ativacao_resultado": "!Boolean",
+            "titulo_entrevista": "String",
+            "titulo_resultado": "String",
+            "descricao_entrevista": "String",
+            "descricao_result": "String"
+        }
     }
 ]
