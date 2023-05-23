@@ -37,9 +37,14 @@ export default function Business() {
                                     PUBLICAR VAGA
                                 </button>
                             </section>
-                            <Table />
+                            <section>
+                                <h1 style={{ marginTop: '3rem' }}>
+                                    Nenhuma vaga foi publicada até o momento!
+                                </h1>
+                            </section>
+                            {/* <Table /> */}
                         </div>
-                        <Footer />
+                        {/* <Footer /> */}
                     </>
                     :
                     <></>

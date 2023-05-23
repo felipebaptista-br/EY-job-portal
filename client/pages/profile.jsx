@@ -44,20 +44,6 @@ export default function Profile() {
                     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                     company: 'Microsoft',
                     logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
-                },
-                {
-                    id: 5,
-                    title: 'Senior UI Designer',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    company: 'Microsoft',
-                    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
-                },
-                {
-                    id: 6,
-                    title: 'Senior UI Designer',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    company: 'Microsoft',
-                    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
                 }
             ]);
         } else {

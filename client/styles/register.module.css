@@ -3,11 +3,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 5rem;
 }
 
-.containerCenter {
+.container-center {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,14 +18,14 @@
     color: var(--primary);
 }
 
-.tabContainer {
+.tab-container {
     width: 500px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.tabContainer button {
+.tab-container button {
     border: none;
     border-radius: 15px;
     background-color: var(--primary);
@@ -33,7 +33,7 @@
     padding: 1rem 5rem;
 }
 
-.tabContainer button:hover {
+.tab-container button:hover {
     transition: 0.5s;
     background-color: var(--secondary);
 }

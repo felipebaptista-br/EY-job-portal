@@ -86,7 +86,7 @@ export default function Register() {
         <>
             <div className={style.container}>
                 <h1>Criar uma  <span className={style.color}>InfinityAccount</span></h1>
-                <Box className={style.containerCenter}>
+                <Box className={style['container-center']}>
                     <Box>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                             <Tab
@@ -102,7 +102,7 @@ export default function Register() {
                         </Tabs>
                     </Box>
                     <TabPanel value={value} index={0}>
-                        <section className={style.tabContainer}>
+                        <section className={style['tab-container']}>
                             <Input
                                 id="name"
                                 type="text"
@@ -145,7 +145,7 @@ export default function Register() {
                         </section>
                     </TabPanel>
                     <TabPanel value={value} index={1}>
-                        <section className={style.tabContainer}>
+                        <section className={style['tab-container']}>
                             <Input
                                 id="name"
                                 type="text"

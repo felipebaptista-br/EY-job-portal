@@ -1,15 +1,44 @@
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useSelector, useDispatch } from "react-redux";
+import { setUser } from "../utils/reducers/users";
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Header from "../components/header";
 import Button from "../components/button";
+import Swal from "sweetalert2";
 
 import style from "../styles/login.module.css";
 
 export default function Login() {
+    // declaration of functions
+    const dispatch = useDispatch();
+    const navigate = useRouter();
+
+    // declaration of variables
     const [mail, setMail] = useState('');
     const [password, setPassword] = useState('');
     const [open, setOpen] = useState(false);
+
+    // declaration of global variables
+    const user = useSelector(state => state.user);
+
+    // functions
+    const handleLogin = () => {
+        setOpen(true);
+        dispatch(
+            setUser({
+                id: 21379,
+                active: true,
+                business: true,
+                name: 'Felipe Baptista',
+                email: mail,
+            })
+        );
+        setTimeout(() => {
+            navigate.push('/');
+        }, 1500);
+    }
 
     return (
         <>
@@ -32,12 +61,14 @@ export default function Login() {
                             onChange={e => setPassword(e.target.value)}
                         />
                     </article>
-                    <a href="/register">Ainda não possui um cadastro?</a>
+                    <a
+                        onClick={() => navigate.push('/register')}
+                    >
+                        Ainda não possui um cadastro?
+                    </a>
                     <Button
                         children="Entrar"
-                        route="/"
-                        time={1500}
-                        loading
+                        onClick={() => handleLogin()}
                     />
                 </section>
             </div>
