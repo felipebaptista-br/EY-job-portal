@@ -28,11 +28,14 @@ export default function Login() {
         setOpen(true);
         dispatch(
             setUser({
-                id: 21379,
                 active: true,
-                business: true,
-                name: 'Felipe Baptista',
-                email: mail,
+                cpf: "51451074808",
+                nome: "Felipe Baptista",
+                email: "felipe.baptista06@gmail.com",
+                senha: "xptoxpto123123",
+                genero: "Masculino",
+                raca: "Branco",
+                id_curso: 1
             })
         );
         setTimeout(() => {

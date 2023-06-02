@@ -14,7 +14,7 @@ export default function Business() {
     const user = useSelector(state => state.user);
 
     useEffect(() => {
-        if (user.active && user.business) {
+        if (user.active && user.cnpj) {
 
         } else {
             navigate.push('/');
@@ -24,7 +24,7 @@ export default function Business() {
     return (
         <>
             {
-                user.active && user.business ?
+                user.active && user.cnpj ?
                     <>
                         <Header panel={false} />
                         <div className={style.businessPanel}>

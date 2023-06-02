@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"
 import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../utils/reducers/users";
-import { HiOutlineLogout as Logout } from "react-icons/hi";
+import { HiOutlineLogout as LogoutIcon } from "react-icons/hi";
+import { FaUserAlt as ProfileIcon } from "react-icons/fa";
 import Image from "next/image";
 import Logo from "../images/logo.png";
 import Button from "./button";
@@ -52,12 +53,18 @@ export default function Header({ panel }) {
                     <section className={panel ? style.headerUser : style.hideContent}>
                         <a
                             onClick={() =>
-                                user.business
-                                    ? navigate.push('/business')
-                                    : navigate.push('/profile')
+                                user.cpf
+                                    ? navigate.push('/profile')
+                                    : navigate.push('/business')
                             }
-                        >Olá {user.name}</a>
-                        <Logout
+                        >
+                            Olá, {user.nome}
+                            <ProfileIcon
+                                size={22}
+                                className={style['profile-icon']}
+                            />
+                        </a>
+                        <LogoutIcon
                             onClick={() => handleLogout()}
                             size={35}
                             className={style['logout-icon']}

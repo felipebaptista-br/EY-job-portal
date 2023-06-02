@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-05-30T00:15:47.372Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="slEBNS649_7rsZa0vLpL" version="21.2.8" type="device">
+<mxfile host="Electron" modified="2023-05-30T00:14:23.919Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="PKy32DUq00OGEyQJNxxj" version="21.2.8" type="device">
   <diagram name="Página-1" id="aA6BPnNgXVh45fCJk3sC">
     <mxGraphModel dx="2074" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -34,10 +34,8 @@
             <mxPoint x="5" y="-16" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="wC2y9SOALVOa7Fehdc4A-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="X0nTdpByvHZywLPCyEU8-10">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="242" y="429.94000000000005" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="wC2y9SOALVOa7Fehdc4A-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="X0nTdpByvHZywLPCyEU8-10" target="wC2y9SOALVOa7Fehdc4A-5">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="X0nTdpByvHZywLPCyEU8-10" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.java" parent="1" vertex="1">
           <mxGeometry x="199.66" y="110" width="84.68" height="160" as="geometry" />
@@ -56,8 +54,8 @@
             <mxPoint x="5" y="-16" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="wC2y9SOALVOa7Fehdc4A-7" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cdn.hashnode.com/res/hashnode/image/upload/v1629645849653/skPC2PqBa.png;" vertex="1" parent="1">
-          <mxGeometry x="130.89" y="400" width="222.22" height="125" as="geometry" />
+        <mxCell id="wC2y9SOALVOa7Fehdc4A-5" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.logo.wine/a/logo/Oracle_Linux/Oracle_Linux-Logo.wine.svg;" vertex="1" parent="1">
+          <mxGeometry x="107" y="370" width="270" height="180" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
