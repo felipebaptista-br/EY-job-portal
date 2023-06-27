@@ -16,34 +16,34 @@
     cursor: pointer;
 }
 
-.hideContent {
+.hide-content {
     display: none;
 }
 
-.headerContent {
+.header-content {
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.headerContent a {
+.header-content a {
     border-radius: 10px;
     padding: 0.7rem 2.5rem;
     margin-right: 0.5rem;
 }
 
-.headerContent a:hover {
+.header-content a:hover {
     transition: 0.5s;
     background-color: #f5f5f5;
 }
 
-.headerUser {
+.header-user {
     display: flex;
     align-items: center;
 }
 
-.headerUser a {
+.header-user a {
     display: flex;
     align-items: center;
     border-radius: 10px;
@@ -51,13 +51,13 @@
     margin-right: 0.5rem;
 }
 
-.headerUser a:hover {
+.header-user a:hover {
     transition: 0.5s;
     background-color: #f5f5f5;
     color: var(--primary);
 }
 
-.headerUser button {
+.header-user button {
     border: none;
     border-radius: 10px;
     background-color: var(--primary);
@@ -66,7 +66,7 @@
     font-size: 1rem;
 }
 
-.headerUser button:hover {
+.header-user button:hover {
     background-color: #292686;
     transition: 0.4s;
 }

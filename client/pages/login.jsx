@@ -1,19 +1,35 @@
 import React, { useState } from "react";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../utils/reducers/users";
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
-import Header from "../components/header";
+import { Input } from "@mui/material";
 import Button from "../components/button";
-import Swal from "sweetalert2";
 
-import style from "../styles/login.module.css";
+import style from "../styles/pages/login.module.css";
 
 export default function Login() {
     // declaration of functions
     const dispatch = useDispatch();
     const navigate = useRouter();
+
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: '#4540DB',
+            },
+            secondary: {
+                main: '#292686',
+            },
+        },
+        typography: {
+            fontFamily: [
+                'Roboto',
+            ].join(','),
+        },
+    });
 
     // declaration of variables
     const [mail, setMail] = useState('');
@@ -29,60 +45,66 @@ export default function Login() {
         dispatch(
             setUser({
                 active: true,
-                cpf: "51451074808",
+                cpf: "514.510.748-08",
                 nome: "Felipe Baptista",
                 email: "felipe.baptista06@gmail.com",
-                senha: "xptoxpto123123",
+                senha: "@Senha12345",
                 genero: "Masculino",
-                raca: "Branco",
-                id_curso: 1
+                raca: "Braco",
+                id_curso: 50
             })
         );
         setTimeout(() => {
-            navigate.push('/');
+            navigate.push('/dashboard');
         }, 1500);
     }
 
     return (
-        <>
-            <Header />
-            <div className={style.container}>
-                <section className={style.loginContainer}>
-                    <h1>Acessar conta</h1>
-                    <article className={style.loginInputs}>
-                        <input
-                            type="text"
-                            placeholder="E-mail"
-                            style={{ marginBottom: "1rem" }}
-                            value={mail}
-                            onChange={e => setMail(e.target.value)}
-                        />
-                        <input
-                            type="password"
-                            placeholder="Senha"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                        />
-                    </article>
-                    <a
-                        onClick={() => navigate.push('/register')}
-                    >
-                        Ainda não possui um cadastro?
-                    </a>
-                    <Button
-                        children="Entrar"
-                        onClick={() => handleLogin()}
+        <main>
+            <ThemeProvider theme={theme}>
+                <div className={style.container}>
+                    <section className={style['login-container']}>
+                        <h1>Log In</h1>
+                        <article className={style['login-inputs']}>
+                            <Input
+                                id="email"
+                                type="mail"
+                                placeholder="E-mail"
+                                style={{ width: "100%" }}
+                                value={mail}
+                                onChange={e => setMail(e.target.value)}
+                            />
+                            <Input
+                                id="password"
+                                type="password"
+                                placeholder="Senha"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                        </article>
+                        <a
+                            onClick={() => navigate.push('/register')}
+                        >
+                            Ainda não possui um cadastro?
+                        </a>
+                        <div className={style['button-group']}>
+                            <Button
+                                children="Entrar"
+                                style={{ width: '50%' }}
+                                onClick={() => handleLogin()}
+                            />
+                        </div>
+                    </section>
+                </div>
+                <Backdrop
+                    sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                    open={open}
+                >
+                    <CircularProgress
+                        color="inherit"
                     />
-                </section>
-            </div>
-            <Backdrop
-                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-                open={open}
-            >
-                <CircularProgress
-                    color="inherit"
-                />
-            </Backdrop>
-        </>
+                </Backdrop>
+            </ThemeProvider>
+        </main>
     )
 }

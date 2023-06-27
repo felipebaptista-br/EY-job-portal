@@ -9,7 +9,7 @@ import Logo from "../images/logo.png";
 import Button from "./button";
 import Swal from "sweetalert2";
 
-import style from "../styles/header.module.css";
+import style from "../styles/components/header.module.css";
 
 export default function Header({ panel }) {
     const navigate = useRouter();
@@ -43,14 +43,13 @@ export default function Header({ panel }) {
                 onClick={() => navigate.push('/')}
                 alt="Logo InfinitySolutions"
             />
-            <section className={panel ? style.headerContent : style.hideContent}>
-                <a onClick={() => navigate.push('/')}>Home</a>
+            <section className={panel ? style['header-content'] : style['hide-content']}>
                 <a onClick={() => navigate.push('/#filters')}>Filtros</a>
                 <a onClick={() => navigate.push('/#jobs')}>Vagas</a>
             </section>
             {
-                user.active ?
-                    <section className={panel ? style.headerUser : style.hideContent}>
+                user && user.active ?
+                    <section className={panel ? style['header-user'] : style['hide-content']}>
                         <a
                             onClick={() =>
                                 user.cpf
@@ -71,7 +70,7 @@ export default function Header({ panel }) {
                         />
                     </section>
                     :
-                    <section className={panel ? style.headerUser : style.hideContent}>
+                    <section className={panel ? style['header-user'] : style['hide-content']}>
                         <a onClick={() => navigate.push('/login')}>Log in</a>
                         <Button
                             children='Registrar'

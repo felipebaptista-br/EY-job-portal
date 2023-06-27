@@ -1,52 +1,17 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../utils/reducers/users";
-import Header from "../components/header";
-import Button from "../components/button";
-import CardFilter from "../components/cardFilter";
+import SideHeader from "../components/sideHeader";
+import CardFilter from "../components/cardFilter"
 import CardJob from "../components/cardJob";
-import Curriculum from "../components/curriculum";
-import Footer from "../components/footer";
+import Button from "../components/button";
 
-import style from "../styles/pages/home.module.css";
+import style from "../styles/pages/dashboard.module.css";
+import { useRouter } from "next/navigation";
 
-export default function Home() {
+export default function Dashboard() {
+    const navigate = useRouter();
     const dispatch = useDispatch();
-
-    const filters = [
-        {
-            label: 'Marketing & Communication',
-            qnt: 5,
-        },
-        {
-            label: 'Design & Development',
-            qnt: 45,
-        },
-        {
-            label: 'Human Research & Development',
-            qnt: 27,
-        },
-        {
-            label: 'Finance Management',
-            qnt: 10,
-        },
-        {
-            label: 'Government Jobs',
-            qnt: 23,
-        },
-        {
-            label: 'Business & Consulting',
-            qnt: 43,
-        },
-        {
-            label: 'Customer Support Care',
-            qnt: 7,
-        },
-        {
-            label: 'Project Management',
-            qnt: 27,
-        }
-    ];
 
     const jobs = [
         {
@@ -132,8 +97,67 @@ export default function Home() {
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
             company: 'Microsoft',
             logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
+        },
+        {
+            id: 13,
+            title: 'Senior UI Designer',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+            company: 'Microsoft',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
+        },
+        {
+            id: 14,
+            title: 'Senior UI Designer',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+            company: 'Microsoft',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
+        },
+        {
+            id: 15,
+            title: 'Senior UI Designer',
+            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+            company: 'Microsoft',
+            logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
         }
     ];
+
+    const filters = [
+        {
+            label: 'Marketing & Communication',
+            qnt: 5,
+        },
+        {
+            label: 'Design & Development',
+            qnt: 45,
+        },
+        {
+            label: 'Human Research & Development',
+            qnt: 27,
+        },
+        {
+            label: 'Finance Management',
+            qnt: 10,
+        },
+        {
+            label: 'Government Jobs',
+            qnt: 23,
+        },
+        {
+            label: 'Business & Consulting',
+            qnt: 43,
+        },
+        {
+            label: 'Customer Support Care',
+            qnt: 7,
+        },
+        {
+            label: 'Project Management',
+            qnt: 27,
+        }
+    ];
+
+    // global state data
+    const user = useSelector(state => state.user);
 
     useEffect(() => {
         var storeData = localStorage.getItem('auth');
@@ -141,44 +165,50 @@ export default function Home() {
         dispatch(
             setUser(data)
         );
+        if(!data.active) {
+            navigate.push('/')
+        }
     }, []);
 
     return (
-        <main>
-            <Header panel />
-            <main>
-                <div className={style.homeHello}>
-                    <section className={style.homeHelloTitle}>
-                        <h1>Conheça a <span className={style.color}>vaga ideal</span> para você!</h1>
-                    </section>
-                    <p>Mais de 250 vagas disponíveis!</p>
-                    <div className={style.homeSearch}>
-                        <input type="text" placeholder="Pesquise uma oportunidade..." />
-                        <Button children='Pesquisar' style={{ padding: "0.7rem 2rem" }} />
-                    </div>
-                </div>
-                <div id="filters" className={style.homeFilter}>
-                    <h1>Use os <span className={style.color}>filtros</span> para encontrar as vagas de seu interesse</h1>
-                    <section className={style['content-filters']}>
-                        {filters.map((filter) =>
-                        (<CardFilter
-                            filter={filter}
-                        />)
-                        )}
-                    </section>
-                </div>
-                <div id="jobs" className={style.homeJobs}>
-                    <h1>Vagas encontradas</h1>
-                    <section className={style.contentJobs}>
-                        {jobs.map((job) =>
-                        (<CardJob
-                            job={job}
-                        />)
-                        )}
-                    </section>
-                </div>
-                <Footer />
-            </main>
-        </main>
+        <>
+            {
+                user && user.active ?
+                    <main style={{ display: 'flex' }}>
+                        <SideHeader menuData='dashboard' />
+                        <div className={style.container}>
+                            <section>
+                                <div className={style['dashboard-search']}>
+                                    <input type="text" placeholder="Pesquise uma oportunidade..." />
+                                    <Button children='Pesquisar' style={{ padding: "0.7rem 2rem" }} />
+                                </div>
+                                <div className={style['container-filters']}>
+                                    <h1>Use os <span className={style.color}>filtros</span> para encontrar a sua <span className={style.color}>vaga</span>!</h1>
+                                    <div className={style['content-filters']}>
+                                        {filters.map((filter) => (
+                                            <CardFilter
+                                                filter={filter}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className={style['container-jobs']}>
+                                    <h1><span className={style.color}>Oportunidades</span> Encontradas:</h1>
+                                    <div className={style['content-jobs']}>
+                                        {jobs.map((job) =>
+                                        (<CardJob
+                                            job={job}
+                                        />)
+                                        )}
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </main>
+                    :
+                    <>
+                    </>
+            }
+        </>
     )
 }

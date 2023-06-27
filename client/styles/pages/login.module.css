@@ -1,28 +1,34 @@
 .container {
-    height: 88vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.loginContainer {
-    width: 580px;
-    height: 450px;
+.login-container {
+    width: 560px;
+    height: 440px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 3rem;
-    border-radius: 30px;
+    border: 2.5px solid #a7a7a7;
+    border-radius: 15px;
     background-color: var(--white);
-    box-shadow: rgba(100, 100, 111, 0.500) 0px 7px 29px 0px;
 }
 
-.loginContainer h1 {
+.login-container h1 {
     font-size: 35px;
     color: var(--primary);
 }
 
-.loginContainer button {
+.login-container a:hover {
+    transition: 0.4s;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.login-container button {
     width: 100%;
     border: none;
     border-radius: 10px;
@@ -31,20 +37,20 @@
     padding: 1rem;
 }
 
-.loginContainer button:hover {
+.login-container button:hover {
     background-color: var(--secondary);
     transition: 0.5s;
 }
 
-.loginInputs {
+.login-inputs {
+    height: 30%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
-.loginInputs input {
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.10) 0px 7px 29px 0px;
+
+.button-group {
+    display: flex;
+    justify-content: center;
 }

@@ -49,10 +49,11 @@
         "tb_vagas": {
             "id_vaga": "!Int",
             "id_departamento": "!Int",
-            "id_recorte": "!Int",
+            "id_recorte": "Int",
             "id_cnpj_FK": "!Int",
             "descricao_empresa": "String",
-            "descricao_vaga": "!String"
+            "descricao_vaga": "!String",
+            "categoria": "!String"
         }
     },
     {

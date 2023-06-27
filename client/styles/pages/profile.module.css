@@ -1,0 +1,12 @@
+.color {
+    color: var(--primary);
+}
+
+.container-profile {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+}

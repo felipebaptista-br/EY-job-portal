@@ -3,7 +3,7 @@ import { AiOutlineUpload } from "react-icons/ai";
 import Image from "next/image";
 import Background from "../images/diversidade.jpg";
 
-import style from "../styles/curriculum.module.css";
+import style from "../styles/components/curriculum.module.css";
 
 export default function Curriculum() {
     return (

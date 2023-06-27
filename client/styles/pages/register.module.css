@@ -20,8 +20,10 @@
 
 .tab-container {
     width: 500px;
+    height: 60vh;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: column;
 }
 

@@ -1,13 +1,11 @@
 import React from "react";
-import Image from "next/image";
-import Logo from "../images/logo.png";
 
-import style from "../styles/footer.module.css";
+import style from "../styles/components/footer.module.css";
 
 export default function Footer() {
     return (
         <footer className={style.footer}>
-            <Image src={Logo} />
+            <p>INFINITY COMPANY 2023</p>
         </footer>
     )
 }

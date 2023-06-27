@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import style from "../styles/cardFilter.module.css";
+import style from "../styles/components/cardFilter.module.css";
 
 export default function cardFilter({ filter }) {
     const [active, setActive] = useState(false);

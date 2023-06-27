@@ -1,80 +1,55 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
-import Header from "../components/header";
-import ProfilePanel from "../components/profilePanel";
+import { useDispatch } from "react-redux";
+import { setUser } from "../utils/reducers/users";
+import SideHeader from "../components/sideHeader";
 import Card from "../components/cardJob";
+import Button from "../components/button";
 
-import style from "../styles/profile.module.css";
+import style from "../styles/pages/profile.module.css";
 
 export default function Profile() {
+    // declaration of variables
     const navigate = useRouter();
-    const [jobs, setJobs] = useState();
+    const dispatch = useDispatch();
 
     // global state data
     const user = useSelector(state => state.user);
 
     useEffect(() => {
-        if (user.active && !user.business) {
-            setJobs([
-                {
-                    id: 1,
-                    title: 'Senior UI Designer',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    company: 'Microsoft',
-                    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
-                },
-                {
-                    id: 2,
-                    title: 'Senior UI Designer',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    company: 'Microsoft',
-                    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
-                },
-                {
-                    id: 3,
-                    title: 'Senior UI Designer',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    company: 'Microsoft',
-                    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
-                },
-                {
-                    id: 4,
-                    title: 'Senior UI Designer',
-                    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    company: 'Microsoft',
-                    logo: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg'
-                }
-            ]);
-        } else {
-            navigate.push('/');
+        var storeData = localStorage.getItem('auth');
+        const data = JSON.parse(storeData);
+        dispatch(
+            setUser(data)
+        );
+        if (!data.active) {
+            navigate.push('/')
         }
     }, []);
 
     return (
         <>
             {
-                user.active && !user.business ?
-                    <>
-                        <Header panel />
-                        <ProfilePanel user={user} />
-                        <div className={style.panel}>
-                            {
-                                !jobs &&
-                                <h1>Aqui ficarão as <span className={style.color}>vagas</span> que você se  <span className={style.color}>candidatou...</span></h1>
-                            }
-                            {
-                                jobs &&
-                                <section className={style.gridContent}>
-                                    {jobs.map((job) =>
-                                        <Card job={job} />
-                                    )}
-                                </section>
-                            }
+                user && user.active ?
+                    <main style={{ display: 'flex' }}>
+                        <SideHeader menuData='profile' />
+                        <div className={style['container-profile']}>
+                            <h1>Olá, <span className={style.color}>{user.nome}</span>!</h1>
+                            <section>
+
+                            </section>
+                            <section className={style['profile-buttons']}>
+                                <Button
+                                    children="EXCLUIR CONTA"
+                                    style={{ backgroundColor: '#980000', padding: '0.8rem 2.5rem' }}
+                                />
+                            </section>
                         </div>
-                    </>
+                    </main>
                     :
-                    <></>
+                    <>
+                    </>
             }
         </>
     )

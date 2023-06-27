@@ -1,4 +1,4 @@
-.cardJob {
+.card-job {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -9,32 +9,31 @@
     border: 3px solid #d3d3d3;
 }
 
-.cardJob:hover {
-    transition: 0.5s;
-    background-color: var(--primary);
-    color: #ffffff;
+.card-job:hover {
+    transition: 0.4s;
     border: none;
+    box-shadow: 0 0 2px 4px var(--primary)
 }
 
-.companyJob {
+.company-job {
     display: flex;
     align-items: center;
 }
 
-.companyJob p {
+.company-job p {
     margin-left: 1rem;
     font-size: 1.1rem;
     font-weight: 500;
 }
 
-.companyJob img {
-    width: 15%;
+.company-job img {
+    width: 10%;
 }
 
-.contentJob {
+.content-job {
     margin-top: 1rem;
 }
 
-.contentJob p {
+.content-job p {
     margin-top: 0.5rem;
 }

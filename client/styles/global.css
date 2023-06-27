@@ -4,6 +4,7 @@
     --primary: #4540DB;
     --secondary: #292686;
     --white: #ffffff;
+    --black: #000000;
 }
 
 body::-webkit-scrollbar {

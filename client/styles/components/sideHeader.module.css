@@ -1,0 +1,46 @@
+.side-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    height: 100vh;
+    padding: 4rem 0rem;
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+
+.logo {
+    width: 70%;
+    height: auto;
+}
+
+.header-options {
+    width: 80%;
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-options a {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-options-active {
+    background-color: #281c6c;
+    border-radius: 15px;
+}
+
+.logout-icon {
+    cursor: pointer;
+}

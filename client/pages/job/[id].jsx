@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import Header from "../../components/header"
+import SideHeader from "../../components/sideHeader";
 import Button from "../../components/button";
 
-import style from "../../styles/job.module.css";
+import style from "../../styles/pages/job.module.css";
 
 export default function Job({ job }) {
     const [id, setId] = useState();
@@ -25,8 +25,8 @@ export default function Job({ job }) {
     // }, []);
 
     return (
-        <>
-            <Header panel={false} />
+        <main className={style['job-container']}>
+            <SideHeader menuData='dashboard' />
             <div className={style.job}>
                 <section className={style.panel}>
                     <h1 className={style.color}>Senior UI Designer</h1>
@@ -35,21 +35,22 @@ export default function Job({ job }) {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <br />
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </section>
-                <section className={style['job-logo']}>
-                    <img
-                        src='https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg'
-                    />
+                    <br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br />
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit, Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <br />
+                    <p><span className={style.color}>Status do processo</span>: Não Iniciado</p>
                 </section>
                 <Button
                     children='CANDIDATAR-SE'
-                    route='/profile'
+                    route='/dashboard'
                     sucess
                     returned='Candidatado(a) com Sucesso!'
                     time={1500}
-                    style={{ padding: "1rem 5rem" }}
+                    style={{ padding: "1rem 3rem" }}
                 />
             </div>
-        </>
+        </main>
     )
 }
