@@ -2,11 +2,136 @@
     color: var(--primary);
 }
 
+.hide {
+    display: none;
+}
+
 .container-profile {
-    width: 80%;
+    width: 85vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 3rem;
+}
+
+.content-profile {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.panel-profile {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-icon {
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.edit-icon:hover {
+    transition: 0.4s;
+    color: var(--secondary);
+}
+
+.button-update {
+    border: none;
+    background-color: #009D10;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 0.8rem 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.button-update:hover {
+    transition: 0.4s;
+    background-color: #00740c;
+}
+
+.profile-buttons {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-password {
+    border: none;
+    background-color: #494949;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 0.8rem 2.5rem;
+}
+
+.button-new-password {
+    width: 20%;
+    border: none;
+    background-color: var(--primary);
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 0.8rem 2.5rem;
+}
+
+.button-new-password:hover {
+    transition: 0.4s;
+    background-color: var(--secondary);
+}
+
+.button-delete {
+    border: none;
+    background-color: #980000;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 0.8rem 2.5rem;
+}
+
+.button-password:hover,
+.button-delete:hover {
+    transition: 0.4s;
+    background-color: #000000;
+}
+
+.container-cv {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-cv label {
+    margin-bottom: 0.3rem;
+}
+
+.input-cv {
+    width: 60%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--white);
+}
+
+.input-cv-disabled {
+    background-color: #494949;
+}
+
+.input-cv-active {
+    cursor: pointer;
+    background-color: var(--primary);
+}
+
+.input-cv::-webkit-file-upload-button {
+    display: none;
+}
+
+.password-profile {
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

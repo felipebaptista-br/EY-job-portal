@@ -4,7 +4,7 @@
 
 .container {
     padding: 3rem;
-    width: 80%;
+    width: 85vw;
 }
 
 .container-jobs {
@@ -20,21 +20,25 @@
     margin-top: 1.8rem;
 }
 
+.container-search {
+    display: flex;
+    justify-content: center;
+}
+
 .dashboard-search {
-    /* position: fixed; */
-    width: 100%;
+    width: 76%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 20px;
-    padding: 0.5rem 1.5rem;
+    padding: 0.3rem 1rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .dashboard-search input {
     width: 100%;
     border: none;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .dashboard-search input::placeholder {

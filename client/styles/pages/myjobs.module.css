@@ -1,0 +1,17 @@
+.color {
+    color: var(--primary);
+}
+
+.container-myjobs {
+    width: 85vw;
+    padding: 3rem;
+}
+
+.content-jobs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 1rem;
+    margin-top: 1.8rem;
+}

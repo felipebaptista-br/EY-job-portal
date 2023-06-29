@@ -7,7 +7,9 @@ import Swal from "sweetalert2";
 import css from "../styles/components/button.module.css";
 
 export default function Button({
+    // value props
     children,
+    className,
     style,
     onClick,
     route,
@@ -16,9 +18,11 @@ export default function Button({
     loading,
     returned
 }) {
+    // declaration of variables
     const navigate = useRouter();
     const [open, setOpen] = useState(false);
 
+    // functions - button
     const handleButton = async () => {
         if (sucess) {
             Swal.fire({
@@ -43,7 +47,7 @@ export default function Button({
 
     return (
         <button
-            className={css.button}
+            className={className ? className : css.button}
             style={style}
             onClick={onClick ? onClick : () => handleButton()}
         >

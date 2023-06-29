@@ -23,7 +23,7 @@ export default function Header({ panel }) {
             title: 'Tem certeza que deseja sair da sua conta?',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
+            confirmButtonColor: '#4540DB',
             cancelButtonColor: '#d33',
             cancelButtonText: 'Não',
             confirmButtonText: 'Sim'

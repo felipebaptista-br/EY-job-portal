@@ -135,6 +135,8 @@ export default function Home() {
         }
     ];
 
+
+    // functions
     useEffect(() => {
         var storeData = localStorage.getItem('auth');
         const data = JSON.parse(storeData);
@@ -147,18 +149,18 @@ export default function Home() {
         <main>
             <Header panel />
             <main>
-                <div className={style.homeHello}>
-                    <section className={style.homeHelloTitle}>
+                <div className={style['home-hello']}>
+                    <section className={style['home-hello-title']}>
                         <h1>Conheça a <span className={style.color}>vaga ideal</span> para você!</h1>
                     </section>
                     <p>Mais de 250 vagas disponíveis!</p>
-                    <div className={style.homeSearch}>
+                    <div className={style['home-search']}>
                         <input type="text" placeholder="Pesquise uma oportunidade..." />
                         <Button children='Pesquisar' style={{ padding: "0.7rem 2rem" }} />
                     </div>
                 </div>
-                <div id="filters" className={style.homeFilter}>
-                    <h1>Use os <span className={style.color}>filtros</span> para encontrar as vagas de seu interesse</h1>
+                <div id="filters" className={style['home-filter']}>
+                    <h2>Use os <span className={style.color}>filtros</span> para encontrar as vagas de seu interesse:</h2>
                     <section className={style['content-filters']}>
                         {filters.map((filter) =>
                         (<CardFilter
@@ -167,9 +169,9 @@ export default function Home() {
                         )}
                     </section>
                 </div>
-                <div id="jobs" className={style.homeJobs}>
-                    <h1>Vagas encontradas</h1>
-                    <section className={style.contentJobs}>
+                <div id="jobs" className={style['home-jobs']}>
+                    <h2>Vagas encontradas:</h2>
+                    <section className={style['content-jobs']}>
                         {jobs.map((job) =>
                         (<CardJob
                             job={job}

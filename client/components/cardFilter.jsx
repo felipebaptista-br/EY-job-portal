@@ -14,7 +14,7 @@ export default function cardFilter({ filter }) {
             onClick={() => handleActivated()}
             className={active ? style.cardFilterActive : style.cardFilter}
         >
-            <h4>{filter.label}</h4>
+            <h5>{filter.label}</h5>
             <p>{filter.qnt} vagas</p>
         </main>
     )

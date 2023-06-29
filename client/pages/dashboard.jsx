@@ -159,56 +159,53 @@ export default function Dashboard() {
     // global state data
     const user = useSelector(state => state.user);
 
+    // functions
     useEffect(() => {
         var storeData = localStorage.getItem('auth');
         const data = JSON.parse(storeData);
         dispatch(
             setUser(data)
         );
-        if(!data.active) {
-            navigate.push('/')
+        if (!data.active) {
+            navigate.push('/login')
         }
     }, []);
 
     return (
-        <>
-            {
-                user && user.active ?
-                    <main style={{ display: 'flex' }}>
-                        <SideHeader menuData='dashboard' />
-                        <div className={style.container}>
-                            <section>
-                                <div className={style['dashboard-search']}>
-                                    <input type="text" placeholder="Pesquise uma oportunidade..." />
-                                    <Button children='Pesquisar' style={{ padding: "0.7rem 2rem" }} />
-                                </div>
-                                <div className={style['container-filters']}>
-                                    <h1>Use os <span className={style.color}>filtros</span> para encontrar a sua <span className={style.color}>vaga</span>!</h1>
-                                    <div className={style['content-filters']}>
-                                        {filters.map((filter) => (
-                                            <CardFilter
-                                                filter={filter}
-                                            />
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className={style['container-jobs']}>
-                                    <h1><span className={style.color}>Oportunidades</span> Encontradas:</h1>
-                                    <div className={style['content-jobs']}>
-                                        {jobs.map((job) =>
-                                        (<CardJob
-                                            job={job}
-                                        />)
-                                        )}
-                                    </div>
-                                </div>
-                            </section>
+        <>{user && user.active ?
+            <main style={{ display: 'flex' }}>
+                <SideHeader menuData='dashboard' />
+                <div className={style.container}>
+                    <section>
+                        <article className={style['container-search']}>
+                            <div className={style['dashboard-search']}>
+                                <input type="text" placeholder="Pesquise uma oportunidade..." />
+                                <Button children='Pesquisar' style={{ padding: "0.7rem 2rem" }} />
+                            </div>
+                        </article>
+                        <div className={style['container-filters']}>
+                            <h3>Use os <span className={style.color}>filtros</span> para encontrar a sua <span className={style.color}>vaga</span>!</h3>
+                            <div className={style['content-filters']}>
+                                {filters.map((filter) => (
+                                    <CardFilter
+                                        filter={filter}
+                                    />
+                                ))}
+                            </div>
                         </div>
-                    </main>
-                    :
-                    <>
-                    </>
-            }
-        </>
+                        <div className={style['container-jobs']}>
+                            <h3><span className={style.color}>Oportunidades</span> Encontradas:</h3>
+                            <div className={style['content-jobs']}>
+                                {jobs.map((job) =>
+                                (<CardJob
+                                    job={job}
+                                />)
+                                )}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main> : <></>
+        }</>
     )
 }

@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../utils/reducers/users";
 import { HiOutlineLogout as LogoutIcon } from "react-icons/hi";
-import Image from "next/image"
-import Logo from "../images/logo-white.png";
+import { IoChevronBack } from "react-icons/io5";
+import { CgMenuLeftAlt } from "react-icons/cg";
 import Swal from "sweetalert2";
 
 import style from "../styles/components/sideHeader.module.css";
 
 export default function SideHeader({ menuData }) {
+    //declaration of variables
     const navigate = useRouter();
+    const [hide, setHide] = useState(false);
 
     // global state data
     const dispatch = useDispatch();
@@ -21,7 +23,7 @@ export default function SideHeader({ menuData }) {
             title: 'Tem certeza que deseja sair da sua conta?',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
+            confirmButtonColor: '#4540DB',
             cancelButtonColor: '#d33',
             cancelButtonText: 'Não',
             confirmButtonText: 'Sim'
@@ -34,13 +36,22 @@ export default function SideHeader({ menuData }) {
     }
 
     return (
-        <header className={style['side-header']}>
-            <Image
-                src={Logo}
-                className={style.logo}
-                alt="Logo InfinitySolutions"
-            />
-            <div className={style['header-options']}>
+        <header className={!hide ? style['side-header'] : style['side-header-hide']}>
+            {/* {
+                !hide ?
+                    <IoChevronBack
+                        onClick={() => setHide(true)}
+                        size={50}
+                        className={style['hide-icon']}
+                    />
+                    :
+                    <CgMenuLeftAlt
+                        onClick={() => setHide(false)}
+                        size={50}
+                        className={style['show-icon']}
+                    />
+            } */}
+            <div className={!hide ? style['header-options'] : style.hide}>
                 <a
                     onClick={() => navigate.push('/dashboard')}
                     className={menuData === 'dashboard' ? style['header-options-active'] : null}
@@ -54,22 +65,26 @@ export default function SideHeader({ menuData }) {
                     MINHAS VAGAS
                 </a>
                 <a
-                    onClick={() => navigate.push('/profile')}
-                    className={menuData === 'profile' ? style['header-options-active'] : null}>
-                    MEU PERFIL
-                </a>
-                <a
                     onClick={() => navigate.push('/support')}
                     className={menuData === 'support' ? style['header-options-active'] : null}
                 >
                     SUPORTE
                 </a>
+                <a
+                    onClick={() => navigate.push('/profile')}
+                    className={menuData === 'profile' ? style['header-options-active'] : null}>
+                    MEU PERFIL
+                </a>
             </div>
-            <LogoutIcon
-                onClick={() => handleLogout()}
-                size={50}
-                className={style['logout-icon']}
-            />
+            {
+                !hide ?
+                    <LogoutIcon
+                        onClick={() => handleLogout()}
+                        size={35}
+                        className={style['logout-icon']}
+                    />
+                    : <></>
+            }
         </header>
     )
 }

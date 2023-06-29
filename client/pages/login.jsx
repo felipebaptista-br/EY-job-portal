@@ -50,7 +50,7 @@ export default function Login() {
                 email: "felipe.baptista06@gmail.com",
                 senha: "@Senha12345",
                 genero: "Masculino",
-                raca: "Braco",
+                raca: "Branca",
                 id_curso: 50
             })
         );

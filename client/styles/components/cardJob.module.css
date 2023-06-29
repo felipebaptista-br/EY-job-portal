@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 250px;
+    height: 200px;
     cursor: pointer;
     padding: 1.5rem;
     border-radius: 20px;
@@ -22,7 +22,7 @@
 
 .company-job p {
     margin-left: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -36,4 +36,11 @@
 
 .content-job p {
     margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.flag {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
 }
