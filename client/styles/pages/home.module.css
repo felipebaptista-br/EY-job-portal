@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap');
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -52,90 +54,51 @@
     color: var(--primary);
 }
 
-.home-hello {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+.logo {
+    height: 3.5rem;
+    width: auto;
 }
 
-.home-hello p {
-    font-size: 1.3rem;
-    animation: fadeIn 6s;
-    -webkit-animation: fadeIn 6s;
-    -moz-animation: fadeIn 6s;
-    -o-animation: fadeIn 6s;
-    -ms-animation: fadeIn 6s;
-}
-
-.home-hello-title {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    font-size: 35px;
-    text-align: center;
-    animation: fadeIn 3s;
-    -webkit-animation: fadeIn 3s;
-    -moz-animation: fadeIn 3s;
-    -o-animation: fadeIn 3s;
-    -ms-animation: fadeIn 3s;
-}
-
-.home-search {
-    width: 60%;
+.home-initial {
+    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px;
-    padding: 0.5rem 1.5rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 3rem;
 }
 
-.home-search input {
-    width: 100%;
-    border: none;
-    font-size: 1rem;
-}
-
-.home-search input::placeholder {
-    color: #878787;
-}
-
-.home-filter {
+.home-initial-contents {
     display: flex;
+    height: 100%;
     flex-direction: column;
-    align-items: center;
-    padding: 5rem;
-    background-color: #F6F7FC;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 
-.home-filter h1 {
-    width: 30%;
-    text-align: center;
+.home-initial-title {
+    width: 80%;
+    font-size: 3.5rem;
+    color: var(--primary);
+    font-family: 'STIX Two Text', serif;
+    animation: fadeIn 4s;
+    -webkit-animation: fadeIn 4s;
+    -moz-animation: fadeIn 4s;
+    -o-animation: fadeIn 4s;
+    -ms-animation: fadeIn 4s;
 }
 
-.content-filters {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 15px;
-    row-gap: 1rem;
-    margin-top: 3rem;
+.home-initial-content {
+    width: 80%;
+    margin-top: 1rem;
+    animation: fadeIn 4s;
+    -webkit-animation: fadeIn 4s;
+    -moz-animation: fadeIn 4s;
+    -o-animation: fadeIn 4s;
+    -ms-animation: fadeIn 4s;
 }
 
-.home-jobs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5rem;
-}
-
-.content-jobs {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 15px;
-    row-gap: 1rem;
-    margin-top: 3rem;
+.background-home-initial {
+    height: 75%;
+    width: auto;
+    border-radius: 70px;
 }
