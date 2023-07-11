@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import content from "../utils/content/support.json";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { setUser } from "../utils/reducers/users";
@@ -79,6 +80,10 @@ export default function Support() {
                 <main style={{ display: 'flex' }}>
                     <SideHeader menuData='support' />
                     <div className={style['container-support']}>
+                        <section style={{ marginBottom: '2rem' }}>
+                            <h4 style={{ marginBottom: '1.5rem' }}>{content['fale-conosco']}</h4>
+                            <p>{content.contato}</p>
+                        </section>
                         <section>
                             <h4 style={{ marginBottom: '1.5rem' }}>POLÍTICA DE SEGURANÇA:</h4>
                             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -87,11 +92,7 @@ export default function Support() {
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Typography style={{ fontSize: '0.8rem' }}>
-                                        O conceito de confidencialidade não foge muito à noção que o próprio termo nos passa. A confidencialidade, no contexto da segurança da informação, nada mais é do que a garantia de que determinada informação, fonte ou sistema é acessível apenas às pessoas previamente autorizadas a terem acesso.
-                                        <br />
-                                        Ou seja, sempre que uma informação confidencial é acessada por um indivíduo não autorizado, intencionalmente ou não, ocorre o que se chama de quebra da confidencialidade. A ruptura desse sigilo, a depender do teor das informações, pode ocasionar danos inestimáveis para a empresa, seus clientes e até mesmo para todo o mercado.
-                                        <br />
-                                        A exemplo, instituições financeiras, detentoras de dados pessoais e bancários de uma infinidade de usuários, não só precisam, mas devem manter a confidencialidade de todas as informações em seu domínio. A quebra desse sigilo significaria expor à riscos uma grande quantidade de pessoas, causando prejuízos incalculáveis.
+                                        {content.confidencialidade}
                                     </Typography>
                                 </AccordionDetails>
                             </Accordion>
@@ -101,11 +102,7 @@ export default function Support() {
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Typography style={{ fontSize: '0.8rem' }}>
-                                        Quando empresas lidam com dados, um dos seus grandes deveres é mantê-los intocados, de forma a preservar a sua originalidade e confiabilidade. Caso contrário, erros podem ocorrer na interpretação dessas informações, gerando também rupturas no compliance do negócio e, no pior dos casos, sanções penais pesadas.
-                                        <br />
-                                        Nesse contexto, garantir a integridade é, pois, adotar todas as precauções necessárias para que a informação não seja modificada ou eliminada sem autorização, isto é, que mantenha a sua legitimidade e consistência, condizendo exatamente com a realidade.
-                                        <br />
-                                        Qualquer falha nesse quesito, seja por uma alteração, falsificação ou acesso irregular, gera a quebra da integridade. Da mesma forma que a quebra de confidencialidade, a ruptura na integridade das informações também pode implicar impactos negativos de grande monta em uma empresa, sobretudo de grande porte, em que os dados e informações têm um valor ainda maior.
+                                        {content.integridade}
                                     </Typography>
                                 </AccordionDetails>
                             </Accordion>
@@ -115,11 +112,7 @@ export default function Support() {
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Typography style={{ fontSize: '0.8rem' }}>
-                                        A relação da segurança da informação com a disponibilidade é basicamente a garantia de acesso aos dados sempre que necessário. Ou seja, é a possibilidade de os colaboradores e membros da organização acessarem os dados de maneira fluida, segura e eficiente.
-                                        <br />
-                                        No contexto corporativo, a disponibilidade das informações é matéria de extrema importância, visto que o negócio pode depender da disponibilidade dos seus dados e sistemas para fechar contratos, vendas e atender os clientes.
-                                        <br />
-                                        Imagine como pode ser prejudicial para uma empresa que trabalha com vendas sofrer algum ataque na sua base de dados e, em razão disso, ter o sistema derrubado por um dia inteiro. Além do prejuízo à imagem, há também perdas financeiras com o não fechamento de vendas. Logo, a disponibilidade também figura como um dos pilares para a segurança da informação.
+                                        {content.disponibilidade}
                                     </Typography>
                                 </AccordionDetails>
                             </Accordion>

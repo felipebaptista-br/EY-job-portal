@@ -166,15 +166,18 @@ export default function Dashboard() {
         dispatch(
             setUser(data)
         );
-        if (!data.active) {
+        if (!data.active || data.cnpj) {
             navigate.push('/login')
         }
     }, []);
 
     return (
-        <>{user && user.active ?
+        <>{user && user.active && user.cpf ?
             <main style={{ display: 'flex' }}>
-                <SideHeader menuData='dashboard' />
+                <SideHeader
+                    userType='candidate'
+                    menuData='dashboard'
+                />
                 <div className={style.container}>
                     <section>
                         <article className={style['container-search']}>

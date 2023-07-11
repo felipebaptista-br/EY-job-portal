@@ -44,8 +44,8 @@ export default function Header({ panel }) {
                 alt="Logo InfinitySolutions"
             />
             <section className={panel ? style['header-content'] : style['hide-content']}>
-                <a onClick={() => navigate.push('/#filters')}>Filtros</a>
-                <a onClick={() => navigate.push('/#jobs')}>Vagas</a>
+                <a onClick={() => navigate.push('/#filters')}></a>
+                <a onClick={() => navigate.push('/#jobs')}>Sobre nós</a>
             </section>
             {
                 user && user.active ?
@@ -59,13 +59,13 @@ export default function Header({ panel }) {
                         >
                             Olá, {user.nome}
                             <ProfileIcon
-                                size={22}
+                                size={16}
                                 className={style['profile-icon']}
                             />
                         </a>
                         <LogoutIcon
                             onClick={() => handleLogout()}
-                            size={35}
+                            size={25}
                             className={style['logout-icon']}
                         />
                     </section>

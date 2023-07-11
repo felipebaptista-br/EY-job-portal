@@ -37,20 +37,6 @@ export default function SideHeader({ menuData }) {
 
     return (
         <header className={!hide ? style['side-header'] : style['side-header-hide']}>
-            {/* {
-                !hide ?
-                    <IoChevronBack
-                        onClick={() => setHide(true)}
-                        size={50}
-                        className={style['hide-icon']}
-                    />
-                    :
-                    <CgMenuLeftAlt
-                        onClick={() => setHide(false)}
-                        size={50}
-                        className={style['show-icon']}
-                    />
-            } */}
             <div className={!hide ? style['header-options'] : style.hide}>
                 <a
                     onClick={() => navigate.push('/dashboard')}
@@ -76,15 +62,11 @@ export default function SideHeader({ menuData }) {
                     MEU PERFIL
                 </a>
             </div>
-            {
-                !hide ?
-                    <LogoutIcon
-                        onClick={() => handleLogout()}
-                        size={35}
-                        className={style['logout-icon']}
-                    />
-                    : <></>
-            }
+            <LogoutIcon
+                onClick={() => handleLogout()}
+                size={30}
+                className={style['logout-icon']}
+            />
         </header>
     )
 }

@@ -128,7 +128,7 @@ export default function Profile() {
                                         <h3>Olá, <span className={style.color}>{user.nome}</span>!</h3>
                                         {disabled ?
                                             <BiEditAlt
-                                                size={30}
+                                                size={25}
                                                 className={style['edit-icon']}
                                                 onClick={() => setDisabled(!disabled)}
                                             />

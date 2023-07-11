@@ -1,0 +1,106 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.businessPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F6F7FC;
+    padding: 5rem 0;
+}
+
+.primary {
+    color: var(--primary);
+}
+
+.businessPanel h1 {
+    width: 50%;
+    text-align: center;
+    font-size: 50px;
+    animation: fadeIn 6s;
+    -webkit-animation: fadeIn 6s;
+    -moz-animation: fadeIn 6s;
+    -o-animation: fadeIn 6s;
+    -ms-animation: fadeIn 6s;
+}
+
+.businessPanel p {
+    animation: fadeIn 6s;
+    -webkit-animation: fadeIn 6s;
+    -moz-animation: fadeIn 6s;
+    -o-animation: fadeIn 6s;
+    -ms-animation: fadeIn 6s;
+}
+
+.business {
+    padding: 2rem 5rem;
+}
+
+.businessJobs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0rem;
+    color: var(--primary);
+}
+
+.businessJobs button {
+    border: none;
+    border-radius: 15px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+}
+
+.businessJobs button:hover {
+    transition: 0.5s;
+    background-color: var(--secondary);
+}

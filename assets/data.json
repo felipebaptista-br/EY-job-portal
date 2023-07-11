@@ -1,13 +1,31 @@
 [
     {
-        "tb_candidatos": {
-            "cpf": "!String",
-            "nome": "!String",
+        "tb_usuario": {
+            "id_usuario": "!Int",
             "email": "!String",
             "senha": "!String",
-            "genero": "!String",
-            "raca": "!String",
-            "id_curso": "!Int"
+            "tipo_usuario": "!String"
+        }
+    },
+    {
+        "tb_candidatos": {
+            "id_candidato": "!Int",
+            "id_usuario": "!Int",
+            "id_vulnerabilidade": "Int",
+            "id_recorte": "Int",
+            "id_curso": "!Int",
+            "cpf": "!String",
+            "nome": "!String",
+            "dt_nascimento": "!Date",
+            "cep": "!String",
+            "genero": "String",
+            "raca": "String"
+        }
+    },
+    {
+        "tb_vulnerabilidade": {
+            "id_vulnerabilidade": "!Int",
+            "des_vulnerabilidade": "!String"
         }
     },
     {
@@ -25,35 +43,47 @@
     },
     {
         "tb_administradores": {
+            "id_usuario": "!Int",
             "id_admin": "!Int",
-            "nome": "!String",
-            "email": "!String",
-            "senha": "!String"
+            "nome": "!String"
         }
     },
     {
         "tb_empresas": {
+            "id_empresa": "!Int",
             "cnpj": "!String",
-            "nome": "!String",
-            "setor": "!String",
-            "descricao": "String"
+            "nome_fantasia": "!String",
+            "des_empresa": "!String",
+            "setor": "!String"
         }
     },
     {
-        "tb_departamento": {
-            "id_departamento": "!Int",
-            "desc_departamento": "!String"
+        "tb_recrutadores": {
+            "id_recrutador": "!Int",
+            "id_usuario": "!Int",
+            "id_empresa": "!Int",
+            "nome": "!String",
+            "dt_nascimento": "!Date",
+            "genero": "!String",
+            "raca": "!String"
+        }
+    },
+    {
+        "tb_area": {
+            "id_area": "!Int",
+            "desc_area": "!String"
         }
     },
     {
         "tb_vagas": {
             "id_vaga": "!Int",
-            "id_departamento": "!Int",
+            "id_area": "!Int",
             "id_recorte": "Int",
-            "id_cnpj_FK": "!Int",
-            "descricao_empresa": "String",
+            "id_empresa": "!Int",
+            "titulo_vaga": "!String",
             "descricao_vaga": "!String",
-            "categoria": "!String"
+            "modelo": "!String",
+            "salario": "String"
         }
     },
     {

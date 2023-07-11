@@ -72,6 +72,7 @@
 .home-hello-title {
     width: 40%;
     display: flex;
+    justify-content: center;
     font-size: 35px;
     text-align: center;
     animation: fadeIn 3s;

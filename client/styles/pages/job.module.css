@@ -8,7 +8,7 @@
 }
 
 .job {
-    width: 80%;
+    width: 85vw;
     height: 100vh;
     display: flex;
     flex-direction: column;

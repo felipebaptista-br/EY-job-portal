@@ -1,8 +1,7 @@
 .card-job {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 200px;
+    justify-content: space-between;
     cursor: pointer;
     padding: 1.5rem;
     border-radius: 20px;

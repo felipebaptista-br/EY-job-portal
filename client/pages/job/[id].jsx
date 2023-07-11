@@ -75,8 +75,7 @@ export default function Job({ job }) {
                         </div>
                     </main>
                     :
-                    <>
-                    </>
+                    <></>
             }
         </>
     )
