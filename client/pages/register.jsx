@@ -93,7 +93,7 @@ export default function Register() {
                 timer: 1500
             });
             setTimeout(() => {
-                navigate.push('/dashboard');
+                navigate.push('/candidate/dashboard');
             }, 1500);
         }
     }
@@ -197,7 +197,7 @@ export default function Register() {
                                         sucess
                                         returned="Conta criada com Sucesso!"
                                         time={1500}
-                                        route="/dashboard"
+                                        route="/candidate/dashboard"
                                     />
                                 </article>
                             </section>

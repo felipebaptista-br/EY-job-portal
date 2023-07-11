@@ -39,13 +39,13 @@ export default function SideHeader({ menuData }) {
         <header className={!hide ? style['side-header'] : style['side-header-hide']}>
             <div className={!hide ? style['header-options'] : style.hide}>
                 <a
-                    onClick={() => navigate.push('/dashboard')}
+                    onClick={() => navigate.push('/candidate/dashboard')}
                     className={menuData === 'dashboard' ? style['header-options-active'] : null}
                 >
                     PROCURAS VAGAS
                 </a>
                 <a
-                    onClick={() => navigate.push('/myjobs')}
+                    onClick={() => navigate.push('/candidate/myjobs')}
                     className={menuData === 'myjobs' ? style['header-options-active'] : null}
                 >
                     MINHAS VAGAS
@@ -57,7 +57,7 @@ export default function SideHeader({ menuData }) {
                     SUPORTE
                 </a>
                 <a
-                    onClick={() => navigate.push('/profile')}
+                    onClick={() => navigate.push('/candidate/profile')}
                     className={menuData === 'profile' ? style['header-options-active'] : null}>
                     MEU PERFIL
                 </a>

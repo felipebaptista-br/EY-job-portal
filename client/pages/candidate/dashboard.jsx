@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Logo from "../images/logo.png";
+import Logo from "../../images/logo.png";
 import { useSelector, useDispatch } from "react-redux";
-import { setUser } from "../utils/reducers/users";
-import SideHeader from "../components/sideHeader";
-import CardFilter from "../components/cardFilter"
-import CardJob from "../components/cardJob";
-import Button from "../components/button";
+import { setUser } from "../../utils/reducers/users";
+import SideHeader from "../../components/sideHeader";
+import CardFilter from "../../components/cardFilter"
+import CardJob from "../../components/cardJob";
+import Button from "../../components/button";
 
-import style from "../styles/pages/dashboard.module.css";
+import style from "../../styles/pages/dashboard.module.css";
 
 import { useRouter } from "next/navigation";
 
@@ -175,7 +175,8 @@ export default function Dashboard() {
     }, []);
 
     return (
-        <>{user && user.active && user.cpf ?
+        <>{
+            user && user.active && user.cpf ?
             <main style={{ display: 'flex' }}>
                 <SideHeader
                     userType='candidate'

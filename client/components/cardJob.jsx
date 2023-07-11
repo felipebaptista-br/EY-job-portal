@@ -10,7 +10,7 @@ export default function CardJob({ job }) {
 
     return (
         <main
-            onClick={() => navigate.push(`/job/id=${job.id}`)}
+            onClick={() => navigate.push(`/candidate/job/id=${job.id}`)}
             className={style['card-job']}>
             <section className={style['company-job']}>
                 <img src={job.logo} alt="Logo" />

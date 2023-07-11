@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
@@ -41,7 +41,7 @@ export default function Login() {
 
     // functions
     const handleLogin = () => {
-        setOpen(true);
+        // setOpen(true);
         dispatch(
             setUser({
                 active: true,
@@ -55,9 +55,21 @@ export default function Login() {
             })
         );
         setTimeout(() => {
-            navigate.push('/dashboard');
+            console.log(user);
+            if (user.cpf) {
+                navigate.push('/candidate/dashboard');
+            }
+            if (user.cnpj) {
+                navigate.push('/recruiter/dashboard');
+            }
         }, 1500);
     }
+
+    useEffect(() => {
+        var storeData = localStorage.getItem('auth');
+        const data = JSON.parse(storeData);
+        console.log(data);
+    }, [])
 
     return (
         <main>

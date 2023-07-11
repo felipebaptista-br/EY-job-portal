@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../../utils/reducers/users";
+import { setUser } from "../../../utils/reducers/users";
 import { usePathname, useRouter } from "next/navigation";
-import SideHeader from "../../components/sideHeader";
-import Button from "../../components/button";
+import SideHeader from "../../../components/sideHeader";
+import Button from "../../../components/button";
 
-import style from "../../styles/pages/job.module.css";
+import style from "../../../styles/pages/job.module.css";
 
 export default function Job({ job }) {
     const navigate = useRouter();
@@ -66,7 +66,7 @@ export default function Job({ job }) {
                             </section>
                             <Button
                                 children='CANDIDATAR-SE'
-                                route='/dashboard'
+                                route='/candidate/dashboard'
                                 sucess
                                 returned='Candidatado(a) com Sucesso!'
                                 time={1500}

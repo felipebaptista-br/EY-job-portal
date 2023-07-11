@@ -2,21 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setUser } from "../utils/reducers/users";
+import { setUser } from "../../utils/reducers/users";
 import { TextField, ThemeProvider, createTheme } from "@mui/material";
 import { BiEditAlt } from "react-icons/bi";
-import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import SideHeader from "../components/sideHeader";
-import Button from "../components/button";
+import SideHeader from "../../components/sideHeader";
+import Button from "../../components/button";
 import Swal from "sweetalert2";
 
-import style from "../styles/pages/profile.module.css";
+import style from "../../styles/pages/profile.module.css";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -110,15 +105,15 @@ export default function Profile() {
         dispatch(
             setUser(data)
         );
-        if (!data.active) {
-            navigate.push('/login');
+        if (!data.active || data.cnpj) {
+            navigate.push('/login')
         }
     }, []);
 
     return (
         <>
             {
-                user && user.active ?
+                user && user.active && user.cpf ?
                     <main style={{ display: 'flex' }}>
                         <ThemeProvider theme={theme}>
                             <SideHeader menuData='profile' />
