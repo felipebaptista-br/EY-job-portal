@@ -50,6 +50,15 @@
     }
 }
 
+.page-container-primary {
+    height: 95vh;
+}
+
+.page-container-secondary {
+    height: 50vh;
+    background-color: var(--effect-primary);
+}
+
 .color {
     color: var(--primary);
 }
@@ -60,7 +69,6 @@
 }
 
 .home-initial {
-    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -102,3 +110,25 @@
     width: auto;
     border-radius: 70px;
 }
+
+.home-benefits {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 10rem;
+}
+
+.home-benefits-items {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.home-benefits-items p {
+    width: 90%;
+    text-align: center;
+}
+
+.home-about {}

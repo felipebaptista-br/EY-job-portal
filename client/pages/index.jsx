@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { FcApproval, FcOnlineSupport, FcComboChart, FcLike, FcTodoList } from "react-icons/fc";
 import Logo from "../images/logo.png";
 import Image from 'next/image';
 import Background from "../images/background-home-initial.jpg";
@@ -23,7 +24,7 @@ export default function Home() {
 
     return (
         <>
-            <div className={style['home-initial']}>
+            <div className={`${style['page-container-primary']} ${style['home-initial']}`}>
                 <section className={style['home-initial-contents']}>
                     <Image
                         src={Logo}
@@ -46,6 +47,34 @@ export default function Home() {
                     alt="Background página Home"
                 />
             </div>
+            <div className={`${style['page-container-secondary']} ${style['home-benefits']}`}>
+                <section className={style['home-benefits-items']}>
+                    <FcApproval size={65} />
+                    <p>Aprovado pelos Colaboradores</p>
+                </section>
+                <section className={style['home-benefits-items']}>
+                    <FcOnlineSupport size={65} />
+                    <p>Suporte Fácil</p>
+                </section>
+                <section className={style['home-benefits-items']}>
+                    <FcComboChart size={65} />
+                    <p>Solução Escalável</p>
+                </section>
+                <section className={style['home-benefits-items']}>
+                    <FcLike size={65} />
+                    <p>Resiliência com Colaboradores</p>
+                </section>
+                <section className={style['home-benefits-items']}>
+                    <FcTodoList size={65} />
+                    <p>Plataforma Interativa</p>
+                </section>
+            </div>
+            {/* <div className={`${style['page-container-primary']} ${style['home-about']}`}>
+
+            </div> */}
+            {/* <div className={`${style['page-container-secondary']} ${style['home-final']}`}>
+
+            </div> */}
             <Footer />
         </>
     )

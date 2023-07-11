@@ -2,6 +2,11 @@
     color: var(--primary);
 }
 
+.logo {
+    height: 70%;
+    width: auto;
+}
+
 .container {
     padding: 3rem;
     width: 85vw;
@@ -21,8 +26,11 @@
 }
 
 .container-search {
+    height: 8vh;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
 }
 
 .dashboard-search {

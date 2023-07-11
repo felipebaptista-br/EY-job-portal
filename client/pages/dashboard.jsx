@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import Image from "next/image";
+import Logo from "../images/logo.png";
 import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../utils/reducers/users";
 import SideHeader from "../components/sideHeader";
@@ -7,6 +9,7 @@ import CardJob from "../components/cardJob";
 import Button from "../components/button";
 
 import style from "../styles/pages/dashboard.module.css";
+
 import { useRouter } from "next/navigation";
 
 export default function Dashboard() {
@@ -181,6 +184,11 @@ export default function Dashboard() {
                 <div className={style.container}>
                     <section>
                         <article className={style['container-search']}>
+                            <Image
+                                src={Logo}
+                                className={style.logo}
+                                alt="Logo da Infinity Company"
+                            />
                             <div className={style['dashboard-search']}>
                                 <input type="text" placeholder="Pesquise uma oportunidade..." />
                                 <Button children='Pesquisar' style={{ padding: "0.7rem 2rem" }} />
