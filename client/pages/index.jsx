@@ -20,7 +20,7 @@ export default function Home() {
     return (
         <>
             <main className={style['home-section']}>
-
+                
             </main>
             <Footer />
         </>
