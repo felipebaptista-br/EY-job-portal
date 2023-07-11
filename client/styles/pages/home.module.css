@@ -76,8 +76,8 @@
 }
 
 .home-initial-title {
-    width: 80%;
-    font-size: 3.5rem;
+    width: 85%;
+    font-size: 4rem;
     color: var(--primary);
     font-family: 'STIX Two Text', serif;
     animation: fadeIn 4s;
@@ -88,7 +88,7 @@
 }
 
 .home-initial-content {
-    width: 80%;
+    width: 85%;
     margin-top: 1rem;
     animation: fadeIn 4s;
     -webkit-animation: fadeIn 4s;
