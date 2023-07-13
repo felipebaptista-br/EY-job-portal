@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import Button from "../components/button";
 import Swal from "sweetalert2";
 
-import style from "../styles/pages/register.module.css";
+import style from "../styles/register.module.css";
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -154,7 +154,7 @@ export default function Register() {
                                         sucess
                                         returned="Conta criada com Sucesso!"
                                         time={1500}
-                                        route="/profile"
+                                        route="/login"
                                     />
                                 </article>
                             </section>
@@ -197,7 +197,7 @@ export default function Register() {
                                         sucess
                                         returned="Conta criada com Sucesso!"
                                         time={1500}
-                                        route="/candidate/dashboard"
+                                        route="/login"
                                     />
                                 </article>
                             </section>

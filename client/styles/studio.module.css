@@ -1,0 +1,41 @@
+.color {
+    color: var(--primary);
+}
+
+.container-studio {
+    width: 100%;
+    height: 100vh;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.description-area {
+    width: 70%;
+    padding: 0.7rem;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid #9e9e9e;
+}
+
+.description-area:hover {
+    border: 1px solid #3b3b3b;
+}
+
+.description-area:focus {
+    border: 2px solid var(--primary);
+}
+
+.form-studio {
+    height: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+}

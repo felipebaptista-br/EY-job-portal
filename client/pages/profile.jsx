@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../utils/reducers/users";
+import { setUser } from "../utils/reducers/users";
 import { TextField, ThemeProvider, createTheme } from "@mui/material";
 import { BiEditAlt } from "react-icons/bi";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import SideHeader from "../../components/sideHeader";
-import Button from "../../components/button";
+import SideBar from "../components/sidebar";
+import Button from "../components/button";
 import Swal from "sweetalert2";
 
-import style from "../../styles/pages/profile.module.css";
+import style from "../styles/profile.module.css";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -105,7 +105,7 @@ export default function Profile() {
         dispatch(
             setUser(data)
         );
-        if (!data.active || data.cnpj) {
+        if (!data.active) {
             navigate.push('/login')
         }
     }, []);
@@ -113,10 +113,10 @@ export default function Profile() {
     return (
         <>
             {
-                user && user.active && user.cpf ?
+                user && user.active ?
                     <main style={{ display: 'flex' }}>
                         <ThemeProvider theme={theme}>
-                            <SideHeader menuData='profile' />
+                            <SideBar menuData='profile' />
                             <div className={style['container-profile']}>
                                 <div className={passwordPage ? style.hide : ''}>
                                     <div className={style['panel-profile']}>
@@ -147,13 +147,24 @@ export default function Profile() {
                                             onChange={e => setDataUser({ ...dataUser, email: e.target.value })}
                                         />
 
-                                        <TextField
-                                            style={{ width: '35%' }}
-                                            label={user.cpf}
-                                            variant="standard"
-                                            disabled={disabled ? true : false}
-                                            onChange={e => setDataUser({ ...dataUser, cpf: e.target.value })}
-                                        />
+                                        {
+                                            user.cpf ?
+                                                <TextField
+                                                    style={{ width: '35%' }}
+                                                    label={user.cpf}
+                                                    variant="standard"
+                                                    disabled={disabled ? true : false}
+                                                    onChange={e => setDataUser({ ...dataUser, cpf: e.target.value })}
+                                                />
+                                                :
+                                                <TextField
+                                                    style={{ width: '35%' }}
+                                                    label={user.cnpj}
+                                                    variant="standard"
+                                                    disabled={disabled ? true : false}
+                                                    onChange={e => setDataUser({ ...dataUser, cpf: e.target.value })}
+                                                />
+                                        }
 
                                         <TextField
                                             style={{ width: '35%' }}

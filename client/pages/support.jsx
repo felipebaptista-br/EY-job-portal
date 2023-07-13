@@ -9,9 +9,9 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import SideHeader from "../components/sideHeader";
+import SideBar from "../components/sidebar";
 
-import style from "../styles/pages/support.module.css";
+import style from "../styles/support.module.css";
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -78,12 +78,8 @@ export default function Support() {
         <>{
             user && user.active ?
                 <main style={{ display: 'flex' }}>
-                    <SideHeader menuData='support' />
+                    <SideBar menuData='support' />
                     <div className={style['container-support']}>
-                        <section style={{ marginBottom: '2rem' }}>
-                            <h4 style={{ marginBottom: '1.5rem' }}>{content['fale-conosco']}</h4>
-                            <p>{content.contato}</p>
-                        </section>
                         <section>
                             <h4 style={{ marginBottom: '1.5rem' }}>POLÍTICA DE SEGURANÇA:</h4>
                             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>

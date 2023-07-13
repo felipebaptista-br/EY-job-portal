@@ -8,7 +8,7 @@ import { setUser } from "../utils/reducers/users";
 import Footer from "../components/footer";
 import Button from "../components/button";
 
-import style from "../styles/pages/home.module.css";
+import style from "../styles/home.module.css";
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -38,7 +38,7 @@ export default function Home() {
                     <Button
                         children='ABRA SUA CONTA'
                         route='/login'
-                        style={{ padding: '1rem 5rem', marginTop: '3rem' }}
+                        className={style['started-account']}
                     />
                 </section>
                 <Image
@@ -47,7 +47,7 @@ export default function Home() {
                     alt="Background página Home"
                 />
             </div>
-            <div className={`${style['page-container-secondary']} ${style['home-benefits']}`}>
+            {/* <div className={`${style['page-container-secondary']} ${style['home-benefits']}`}>
                 <section className={style['home-benefits-items']}>
                     <FcApproval size={65} />
                     <p>Aprovado pelos Colaboradores</p>
@@ -68,7 +68,7 @@ export default function Home() {
                     <FcTodoList size={65} />
                     <p>Plataforma Interativa</p>
                 </section>
-            </div>
+            </div> */}
             {/* <div className={`${style['page-container-primary']} ${style['home-about']}`}>
 
             </div> */}

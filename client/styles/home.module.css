@@ -64,7 +64,7 @@
 }
 
 .logo {
-    height: 3.5rem;
+    height: 2.5rem;
     width: auto;
 }
 
@@ -111,6 +111,46 @@
     border-radius: 70px;
 }
 
+.started-account {
+    width: 40%;
+    position: relative;
+    border: 2px solid var(--primary);
+    text-align: start;
+    font-size: 1.2rem;
+    color: var(--primary);
+    background-color: transparent;
+    padding: 1rem;
+}
+
+.started-account::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.started-account:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.started-account::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: var(--primary);
+    z-index: -1;
+    transition: transform .3s ease;
+}
+
+.started-account:hover {
+    transition: .3s;
+    color: var(--white);
+}
+
 .home-benefits {
     display: flex;
     align-items: center;
@@ -130,5 +170,3 @@
     width: 90%;
     text-align: center;
 }
-
-.home-about {}

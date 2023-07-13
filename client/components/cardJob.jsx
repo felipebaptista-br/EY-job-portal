@@ -3,7 +3,7 @@ import Image from "next/image";
 import Flag from "../images/flag.jpg"
 import { useRouter } from "next/navigation";
 
-import style from "../styles/components/cardJob.module.css";
+import style from "../styles/cardJob.module.css";
 
 export default function CardJob({ job }) {
     const navigate = useRouter();

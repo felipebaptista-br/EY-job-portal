@@ -5,10 +5,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { setUser } from "../utils/reducers/users";
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
-import { Input } from "@mui/material";
+import TextField from '@mui/material/TextField';
 import Button from "../components/button";
 
-import style from "../styles/pages/login.module.css";
+import style from "../styles/login.module.css";
 
 export default function Login() {
     // declaration of functions
@@ -45,7 +45,7 @@ export default function Login() {
         dispatch(
             setUser({
                 active: true,
-                cpf: "514.510.748-08",
+                cnpj: "514.510.748-08",
                 nome: "Felipe Baptista",
                 email: "felipe.baptista06@gmail.com",
                 senha: "@Senha12345",
@@ -54,15 +54,12 @@ export default function Login() {
                 id_curso: 50
             })
         );
-        setTimeout(() => {
-            console.log(user);
-            if (user.cpf) {
-                navigate.push('/candidate/dashboard');
-            }
-            if (user.cnpj) {
-                navigate.push('/recruiter/dashboard');
-            }
-        }, 1500);
+        if (user.cpf) {
+            navigate.push('/candidate/dashboard');
+        }
+        if (user.cnpj) {
+            navigate.push('/recruiter/studio');
+        }
     }
 
     useEffect(() => {
@@ -78,18 +75,20 @@ export default function Login() {
                     <section className={style['login-container']}>
                         <h1>Log In</h1>
                         <article className={style['login-inputs']}>
-                            <Input
-                                id="email"
-                                type="mail"
-                                placeholder="E-mail"
-                                style={{ width: "100%" }}
+                            <TextField
+                                id="standard-basic"
+                                label="E-mail"
+                                type="email"
+                                variant="standard"
                                 value={mail}
                                 onChange={e => setMail(e.target.value)}
+
                             />
-                            <Input
-                                id="password"
+                            <TextField
+                                id="standard-basic"
+                                label="Senha"
                                 type="password"
-                                placeholder="Senha"
+                                variant="standard"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                             />
@@ -101,7 +100,7 @@ export default function Login() {
                         </a>
                         <div className={style['button-group']}>
                             <Button
-                                children="Entrar"
+                                children="ENTRAR"
                                 style={{ width: '50%' }}
                                 onClick={() => handleLogin()}
                             />

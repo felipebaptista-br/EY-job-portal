@@ -4,7 +4,7 @@ import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Swal from "sweetalert2";
 
-import css from "../styles/components/button.module.css";
+import css from "../styles/button.module.css";
 
 export default function Button({
     // value props

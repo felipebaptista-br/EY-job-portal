@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../utils/reducers/users";
 import { useRouter } from "next/navigation";
-import SideHeader from "../../components/sideHeader";
+import SideBar from "../../components/sidebar";
 import CardJob from "../../components/cardJob";
 
-import style from "../../styles/pages/myjobs.module.css";
+import style from "../../styles/myjobs-candidate.module.css";
 
 export default function MyJobs() {
     // declaration of variables
@@ -76,7 +76,7 @@ export default function MyJobs() {
         <>{
             user && user.active && user.cpf ?
                 <main style={{ display: 'flex' }}>
-                    <SideHeader menuData='myjobs' />
+                    <SideBar menuData='myjobs' />
                     <div className={style['container-myjobs']}>
                         <h3>Em <span className={style.color}>andamento</span>:</h3>
                         <section className={style['content-jobs']}>

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../../utils/reducers/users";
 import { usePathname, useRouter } from "next/navigation";
-import SideHeader from "../../../components/sideHeader";
+import SideBar from "../../../components/sidebar";
 import Button from "../../../components/button";
 
-import style from "../../../styles/pages/job.module.css";
+import style from "../../../styles/job.module.css";
 
 export default function Job({ job }) {
     const navigate = useRouter();
@@ -48,7 +48,7 @@ export default function Job({ job }) {
             {
                 user && user.active ?
                     <main className={style['job-container']}>
-                        <SideHeader menuData='dashboard' />
+                        <SideBar menuData='dashboard' />
                         <div className={style.job}>
                             <section className={style.panel}>
                                 <h1 className={style.color}>Senior UI Designer</h1>
